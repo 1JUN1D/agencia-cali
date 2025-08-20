@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agencia de Cruceros Cali - Viajes Internacionales Europa, USA, México | Aventurarte</title>
+    <meta name="description" content="Agencia de cruceros en Cali especializada en viajes internacionales. Cruceros a Europa, Estados Unidos y México desde Cali con descuentos exclusivos y todo incluido.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Header */
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #2c5aa0;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #2c5aa0;
+        }
+
+        .contact-btn {
+            background: #25D366;
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .contact-btn:hover {
+            background: #1ea952;
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 70vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+                        url('/1.jpg') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            margin-top: 80px;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        .hero-content p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            max-width: 800px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+        }
+
+        .cta-button {
+            background: #ff6b35;
+            color: white;
+            padding: 18px 36px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            background: #e55a2b;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(255, 107, 53, 0.4);
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #2c5aa0;
+            margin-bottom: 3rem;
+        }
+
+        /* Intro Section */
+        .intro-section {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .intro-content {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .intro-content p {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 2rem;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .benefit-item {
+            text-align: center;
+            padding: 2rem;
+            background: linear-gradient(135deg, #e3f2fd, #f8f9fa);
+            border-radius: 15px;
+            transition: transform 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .benefit-item:hover {
+            transform: translateY(-5px);
+            border-color: #2c5aa0;
+        }
+
+        .benefit-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .benefit-item h3 {
+            color: #2c5aa0;
+            margin-bottom: 1rem;
+        }
+
+        /* Cruises Section */
+        .cruises-section {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+
+        .cruises-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .cruise-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .cruise-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .cruise-image {
+            height: 280px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .cruise-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: #ff6b35;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        .cruise-duration {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: rgba(44, 90, 160, 0.9);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        .cruise-content {
+            padding: 2rem;
+        }
+
+        .cruise-content h3 {
+            color: #2c5aa0;
+            margin-bottom: 1rem;
+            font-size: 1.6rem;
+        }
+
+        .cruise-content p {
+            color: #666;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .cruise-highlights {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 10px;
+            margin-bottom: 1.5rem;
+        }
+
+        .cruise-highlights h4 {
+            color: #2c5aa0;
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+
+        .cruise-features {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .cruise-features li {
+            padding: 0.5rem 0;
+            color: #555;
+        }
+
+        .cruise-features li:before {
+            content: "⚓ ";
+            color: #2c5aa0;
+            margin-right: 0.5rem;
+        }
+
+        .cruise-price {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .price-main {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #ff6b35;
+        }
+
+        .price-detail {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .cruise-btn {
+            background: #25D366;
+            color: white;
+            padding: 12px 20px;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            display: inline-block;
+            transition: all 0.3s ease;
+            width: 100%;
+            text-align: center;
+        }
+
+        .cruise-btn:hover {
+            background: #1ea952;
+            transform: translateY(-2px);
+        }
+
+        /* Features Section */
+        .features-section {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-item {
+            text-align: center;
+            padding: 2rem;
+            background: linear-gradient(135deg, #2c5aa0, #ff6b35);
+            color: white;
+            border-radius: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .feature-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-item h3 {
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+        }
+
+        .feature-item p {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, #2c5aa0, #ff6b35);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        /* WhatsApp Float Button */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 30px;
+            right: 30px;
+            background: #25D366;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 2rem;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            z-index: 1000;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            background: #1ea952;
+        }
+
+        /* Footer */
+        .footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 3rem 0;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #ff6b35;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero-content p {
+                font-size: 1.1rem;
+            }
+
+            .nav-container {
+                padding: 0 1rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .logo {
+                font-size: 1.5rem;
+            }
+
+            .contact-btn {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .cruises-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                bottom: 20px;
+                right: 20px;
+                font-size: 1.5rem;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .cruise-price {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="nav-container">
+            <a href="/index.html" class="logo">🌍 Aventurarte</a>
+            <div class="nav-links">
+                <a href="/index.html">Inicio</a>
+                <a href="/agencia-de-turismo.html">Turismo Nacional</a>
+                <a href="/agencia-de-turismo-en-autobus.html">Turismo en Autobús</a>
+                <a href="/agencia-de-cruceros.html">Cruceros</a>
+                <a href="https://wa.me/573126865031" class="contact-btn" target="_blank">
+                    📱 Contáctanos
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Agencia de Cruceros Cali - Viajes Internacionales de Lujo</h1>
+            <p>Especialistas en cruceros internacionales desde Cali. Descubre Europa, Estados Unidos y México navegando en los mejores barcos con todo incluido y descuentos exclusivos.</p>
+            <a href="https://wa.me/573126865031?text=Hola, quiero información sobre cruceros internacionales con descuento" class="cta-button" target="_blank">
+                Consultar Cruceros Disponibles
+            </a>
+        </div>
+    </section>
+
+    <!-- Intro Section -->
+    <section class="intro-section">
+        <div class="container">
+            <div class="intro-content">
+                <h2 class="section-title">¿Por Qué Elegir Nuestros Cruceros?</h2>
+                <p>Somos la agencia líder en cruceros internacionales desde Cali con más de 12 años conectando viajeros colombianos con las mejores experiencias marítimas del mundo. Trabajamos con las naviera más prestigiosas y ofrecemos precios exclusivos.</p>
+                <p>Desde el Mediterráneo hasta el Caribe, pasando por los fiordos noruegos y las costas de Alaska, te acompañamos en cada travesía con asesoramiento personalizado y soporte 24/7.</p>
+            </div>
+
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <div class="benefit-icon">🚢</div>
+                    <h3>Mejores Navieras</h3>
+                    <p>Alianzas con Royal Caribbean, Norwegian, MSC y Princess Cruises</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">💎</div>
+                    <h3>Todo Incluido</h3>
+                    <p>Hospedaje, comidas, entretenimiento y excursiones en un solo precio</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">🌍</div>
+                    <h3>Destinos Únicos</h3>
+                    <p>Más de 50 rutas disponibles por Europa, América y el Caribe</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">🎁</div>
+                    <h3>Promociones Exclusivas</h3>
+                    <p>Descuentos especiales y beneficios solo para nuestros clientes</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cruises Section -->
+    <section class="cruises-section">
+        <div class="container">
+            <h2 class="section-title">Cruceros Internacionales Disponibles</h2>
+            
+            <div class="cruises-grid">
+                <!-- Europa -->
+                <div class="cruise-card" onclick="window.location.href='viajes-europa-desde-cali.html'">
+                    <div class="cruise-image" style="background-image: url('https://images.unsplash.com/photo-1467269204594-9661b134dd2b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80')">
+                        <div class="cruise-duration">12-15 Días</div>
+                        <div class="cruise-badge">🔥 Más Popular</div>
+                    </div>
+                    <div class="cruise-content">
+                        <h3>Viajes Europa desde Cali</h3>
+                        <p>Descubre las capitales europeas más hermosas navegando por el Mediterráneo, Báltico y Atlántico. Roma, Barcelona, París, Amsterdam y mucho más en una sola experiencia.</p>
+                        
+                        <div class="cruise-highlights">
+                            <h4>🏛️ Puertos Destacados:</h4>
+                            <p>Roma, Barcelona, Marsella, Nápoles, Palma de Mallorca, Civitavecchia</p>
+                        </div>
+
+                        <ul class="cruise-features">
+                            <li>Vuelos Cali - Europa incluidos</li>
+                            <li>Cabinas con balcón disponibles</li>
+                            <li>Excursiones en cada puerto</li>
+                            <li>Todas las comidas incluidas</li>
+                            <li>Entretenimiento nocturno</li>
+                            <li>Wifi y spa a bordo</li>
+                        </ul>
+                        
+                        <div class="cruise-price">
+                            <div>
+                                <div class="price-main">Desde $4.800.000</div>
+                                <div class="price-detail">Por persona en cabina doble</div>
+                            </div>
+                        </div>
+                        
+                        <a href="https://wa.me/573126865031?text=Hola, quiero información sobre Viajes Europa desde Cali" class="cruise-btn" target="_blank">
+                            💬 Consultar Crucero Europa
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Estados Unidos -->
+                <div class="cruise-card" onclick="window.location.href='planes-estados-unidos-cali.html'">
+                    <div class="cruise-image" style="background-image: url('https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80')">
+                        <div class="cruise-duration">7-10 Días</div>
+                        <div class="cruise-badge">🇺🇸 Premium</div>
+                    </div>
+                    <div class="cruise-content">
+                        <h3>Planes Estados Unidos Cali</h3>
+                        <p>Experimenta la costa este y oeste de Estados Unidos con cruceros que combinan ciudades icónicas, playas tropicales y paisajes únicos como Alaska y Hawaii.</p>
+                        
+                        <div class="cruise-highlights">
+                            <h4>🏙️ Puertos Destacados:</h4>
+                            <p>Miami, Fort Lauderdale, Nueva York, Seattle, Los Angeles, Honolulu</p>
+                        </div>
+
+                        <ul class="cruise-features">
+                            <li>Vuelos Cali - USA incluidos</li>
+                            <li>Visa americana tramitada</li>
+                            <li>Cruceros temáticos disponibles</li>
+                            <li>Shows de Broadway a bordo</li>
+                            <li>Casinos y piscinas</li>
+                            <li>Actividades para toda la familia</li>
+                        </ul>
+                        
+                        <div class="cruise-price">
+                            <div>
+                                <div class="price-main">Desde $3.200.000</div>
+                                <div class="price-detail">Por persona en cabina doble</div>
+                            </div>
+                        </div>
+                        
+                        <a href="https://wa.me/573126865031?text=Hola, quiero información sobre Planes Estados Unidos Cali" class="cruise-btn" target="_blank">
+                            💬 Consultar Crucero USA
+                        </a>
+                    </div>
+                </div>
+
+                <!-- México -->
+                <div class="cruise-card" onclick="window.location.href='turismo-mexico-desde-cali.html'">
+                    <div class="cruise-image" style="background-image: url('https://images.unsplash.com/photo-1518105779142-d975f22f1b0a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80')">
+                        <div class="cruise-duration">5-8 Días</div>
+                        <div class="cruise-badge">🌮 Cultural</div>
+                    </div>
+                    <div class="cruise-content">
+                        <h3>Turismo México desde Cali</h3>
+                        <p>Sumérgete en la rica cultura mexicana navegando por el Caribe y Pacífico mexicano. Playas paradisíacas, sitios arqueológicos y la mejor gastronomía te esperan.</p>
+                        
+                        <div class="cruise-highlights">
+                            <h4>🏖️ Puertos Destacados:</h4>
+                            <p>Cancún, Cozumel, Playa del Carmen, Puerto Vallarta, Mazatlán, Cabo</p>
+                        </div>
+
+                        <ul class="cruise-features">
+                            <li>Vuelos Cali - México incluidos</li>
+                            <li>Tours arqueológicos Mayans</li>
+                            <li>Playas de arena blanca</li>
+                            <li>Gastronomía mexicana a bordo</li>
+                            <li>Actividades acuáticas</li>
+                            <li>Fiestas temáticas mexicanas</li>
+                        </ul>
+                        
+                        <div class="cruise-price">
+                            <div>
+                                <div class="price-main">Desde $2.400.000</div>
+                                <div class="price-detail">Por persona en cabina doble</div>
+                            </div>
+                        </div>
+                        
+                        <a href="https://wa.me/573126865031?text=Hola, quiero información sobre Turismo México desde Cali" class="cruise-btn" target="_blank">
+                            💬 Consultar Crucero México
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section">
+        <div class="container">
+            <h2 class="section-title">Experiencias Únicas en Nuestros Cruceros</h2>
+            
+            <div class="features-grid">
+                <div class="feature-item">
+                    <h3>🍽️ Gastronomía Mundial</h3>
+                    <p>Restaurantes especializados, buffets internacionales y chefs de reconocimiento mundial</p>
+                </div>
+                <div class="feature-item">
+                    <h3>🎭 Entretenimiento Premium</h3>
+                    <p>Shows de Broadway, conciertos en vivo, comedias y espectáculos exclusivos</p>
+                </div>
+                <div class="feature-item">
+                    <h3>🏊‍♀️ Instalaciones de Lujo</h3>
+                    <p>Piscinas, spas, gimnasios, pistas de patinaje y muros de escalada</p>
+                </div>
+                <div class="feature-item">
+                    <h3>👨‍👩‍👧‍👦 Para Toda la Familia</h3>
+                    <p>Clubes infantiles, actividades teens y espacios para adultos mayores</p>
+                </div>
+                <div class="feature-item">
+                    <h3>🛍️ Compras Libres de Impuestos</h3>
+                    <p>Boutiques de marcas internacionales con precios especiales a bordo</p>
+                </div>
+                <div class="feature-item">
+                    <h3>📸 Momentos Inolvidables</h3>
+                    <p>Fotografías profesionales y recuerdos únicos de tu experiencia</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>¿Listo para Navegar por el Mundo?</h2>
+            <p>Nuestros especialistas en cruceros te ayudarán a elegir la ruta perfecta y te darán información sobre próximas promociones exclusivas para viajeros desde Cali</p>
+            <a href="https://wa.me/573126865031?text=Hola, quiero información sobre cruceros internacionales con descuento especial" class="cta-button" target="_blank">
+                Hablar con Especialista en Cruceros
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="/index.html">Inicio</a>
+                <a href="agencia-de-turismo.html">Turismo Nacional</a>
+                <a href="agencia-de-turismo-en-autobus.html">Turismo en Autobús</a>
+                <a href="agencia-de-cruceros.html">Cruceros</a>
+                <a href="centro-de-informacion-turistica.html">Información Turística</a>
+            </div>
+            <p>&copy; 2025 Aventurarte - Agencia de Cruceros Cali. Todos los derechos reservados.</p>
+            <p>📱 WhatsApp: +57 312 686 5031 | 📍 Cali, Valle del Cauca, Colombia</p>
+            <p>Especialistas en cruceros internacionales desde Cali</p>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/573126865031?text=Hola, quiero información sobre destinos nacionales con descuento" class="whatsapp-float" target="_blank">
+        <img src="ic_whatsapp.png" alt="WhatsApp" style="width: 60%; height: 60%;">
+    </a>
+
+</body>
+</html>

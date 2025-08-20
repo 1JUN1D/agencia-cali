@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agencia de Viajes Norte Cali - Servicios Premium Zona Norte | Aventurarte</title>
+    <meta name="description" content="Agencia de viajes especializada en zona norte de Cali. Recogidas en Chipichape, Ciudad Jardín, Valle del Lili. Servicios VIP y grupos exclusivos.">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
+
+        .header {
+            background: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        .nav { max-width: 1200px; margin: 0 auto; padding: 0 2rem; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 1.5rem; font-weight: bold; color: #2c5aa0; text-decoration: none; }
+        .contact-btn {
+            background: #25D366;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+        }
+
+        .hero {
+            height: 60vh;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+                        url('/4.jpg') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            margin-top: 70px;
+        }
+        .hero h1 { font-size: 2.5rem; margin-bottom: 1rem; }
+        .hero p { font-size: 1.2rem; margin-bottom: 2rem; max-width: 600px; }
+
+        .container { max-width: 800px; margin: 0 auto; padding: 3rem 2rem; }
+        .section { margin-bottom: 3rem; }
+        .section h2 { color: #8B4513; margin-bottom: 1rem; font-size: 1.8rem; }
+
+        .premium-box {
+            background: linear-gradient(135deg, #8B4513, #D2691E);
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            margin: 2rem 0;
+        }
+        .premium-title { font-size: 2rem; font-weight: bold; margin-bottom: 1rem; }
+        .premium-detail { opacity: 0.9; margin-bottom: 2rem; }
+
+        .locations {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        .location {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            border-left: 4px solid #8B4513;
+        }
+        .location h3 { color: #8B4513; margin-bottom: 0.5rem; }
+
+        .cta-button {
+            background: #25D366;
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            display: inline-block;
+            text-align: center;
+            width: 100%;
+            margin: 1rem 0;
+        }
+
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 30px;
+            right: 30px;
+            background: #25D366;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 2rem;
+            z-index: 1000;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .hero p { font-size: 1rem; }
+            .nav { padding: 0 1rem; }
+            .locations { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="nav">
+            <a href="/index.html" class="logo">🌍 Aventurarte</a>
+            <a href="https://wa.me/573126865031" class="contact-btn">Contactar</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div>
+            <h1>Agencia de Viajes Norte Cali</h1>
+            <p>Servicios premium para la zona más exclusiva de Cali. Recogidas VIP, grupos pequeños y atención personalizada.</p>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="premium-box">
+            <div class="premium-title">Servicio VIP Zona Norte</div>
+            <div class="premium-detail">Atención exclusiva para residentes del norte de Cali</div>
+            <a href="https://wa.me/573126865031?text=Hola, vivo en el norte de Cali y quiero información sobre servicios VIP de viajes" class="cta-button">
+                Consultar Servicio VIP
+            </a>
+        </div>
+
+        <section class="section">
+            <h2>Puntos de Encuentro Norte Cali</h2>
+            <div class="locations">
+                <div class="location">
+                    <h3>Chipichape</h3>
+                    <p>Centro Comercial Chipichape - Entrada principal</p>
+                </div>
+                <div class="location">
+                    <h3>Ciudad Jardín</h3>
+                    <p>Jardín Plaza - Plazoleta central</p>
+                </div>
+                <div class="location">
+                    <h3>Valle del Lili</h3>
+                    <p>Clínica Valle del Lili - Parqueadero</p>
+                </div>
+                <div class="location">
+                    <h3>Unicentro</h3>
+                    <p>Centro Comercial Unicentro - Torre 1</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Servicios Exclusivos</h2>
+            <p><strong>Recogida en Hoteles:</strong> Servicio puerta a puerta para hoteles zona norte</p>
+            <p><strong>Grupos VIP:</strong> Máximo 15 personas por grupo para mayor comodidad</p>
+            <p><strong>Vehículos Premium:</strong> Flota moderna con aire acondicionado y wifi</p>
+            <p><strong>Atención Personalizada:</strong> Asesor dedicado para cada grupo</p>
+        </section>
+
+        <section class="section">
+            <h2>Destinos Disponibles</h2>
+            <p>Todos nuestros destinos nacionales e internacionales con salidas especiales desde zona norte:</p>
+            <p>• Eje Cafetero Premium • Cartagena Ejecutivo • San Andrés VIP • Cruceros Internacionales</p>
+        </section>
+
+        <div class="premium-box">
+            <h2>Exclusivo para Zona Norte</h2>
+            <p>Descuentos especiales y servicios premium</p>
+            <a href="https://wa.me/573126865031?text=Hola, vivo en el norte de Cali y quiero conocer los planes disponibles con descuentos" class="cta-button">
+                Ver Planes Exclusivos
+            </a>
+        </div>
+    </div>
+
+    <a href="https://wa.me/573126865031?text=Hola, quiero información sobre destinos nacionales con descuento" class="whatsapp-float" target="_blank">
+        <img src="ic_whatsapp.png" alt="WhatsApp" style="width: 60%; height: 60%;">
+    </a>
+</body>
+</html>

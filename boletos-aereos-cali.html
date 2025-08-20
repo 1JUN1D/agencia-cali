@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boletos Aéreos Cali - Ofertas Diarias Vuelos Nacionales e Internacionales | Aventurarte</title>
+    <meta name="description" content="Boletos aéreos desde Cali con las mejores ofertas. Vuelos nacionales e internacionales, todas las aerolíneas, alertas de promociones y check-in asistido.">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
+
+        .header {
+            background: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        .nav { max-width: 1200px; margin: 0 auto; padding: 0 2rem; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 1.5rem; font-weight: bold; color: #2c5aa0; text-decoration: none; }
+        .contact-btn {
+            background: #25D366;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+        }
+
+        .hero {
+            height: 60vh;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+                        url('https://images.unsplash.com/photo-1436491865332-7a61a109cc05?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            margin-top: 70px;
+        }
+        .hero h1 { font-size: 2.5rem; margin-bottom: 1rem; }
+        .hero p { font-size: 1.2rem; margin-bottom: 2rem; max-width: 600px; }
+
+        .container { max-width: 800px; margin: 0 auto; padding: 3rem 2rem; }
+        .section { margin-bottom: 3rem; }
+        .section h2 { color: #1E90FF; margin-bottom: 1rem; font-size: 1.8rem; }
+
+        .flight-box {
+            background: linear-gradient(135deg, #1E90FF, #87CEEB);
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            margin: 2rem 0;
+        }
+        .flight-title { font-size: 2rem; font-weight: bold; margin-bottom: 1rem; }
+        .flight-detail { opacity: 0.9; margin-bottom: 2rem; }
+
+        .destinations {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        .destination {
+            background: #f0f8ff;
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            border-top: 4px solid #1E90FF;
+        }
+        .destination h3 { color: #1E90FF; margin-bottom: 0.5rem; }
+
+        .airlines {
+            background: #e6f3ff;
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+        }
+
+        .cta-button {
+            background: #25D366;
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            display: inline-block;
+            text-align: center;
+            width: 100%;
+            margin: 1rem 0;
+        }
+
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 30px;
+            right: 30px;
+            background: #25D366;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 2rem;
+            z-index: 1000;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .hero p { font-size: 1rem; }
+            .nav { padding: 0 1rem; }
+            .destinations { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="nav">
+            <a href="/index.html" class="logo">🌍 Aventurarte</a>
+            <a href="https://wa.me/573126865031" class="contact-btn">Contactar</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div>
+            <h1>Boletos Aéreos Cali</h1>
+            <p>Vuelos nacionales e internacionales con las mejores ofertas. Comparamos 500+ aerolíneas para encontrar el mejor precio.</p>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="flight-box">
+            <div class="flight-title">Ofertas Diarias</div>
+            <div class="flight-detail">Monitoreo constante de promociones especiales</div>
+            <a href="https://wa.me/573126865031?text=Hola, busco boletos aéreos con las mejores ofertas desde Cali" class="cta-button">
+                Consultar Ofertas Vuelos
+            </a>
+        </div>
+
+        <section class="section">
+            <h2>Destinos desde Cali</h2>
+            <div class="destinations">
+                <div class="destination">
+                    <h3>Nacional</h3>
+                    <p>Bogotá, Medellín, Cartagena, San Andrés, Barranquilla</p>
+                </div>
+                <div class="destination">
+                    <h3>Centroamérica</h3>
+                    <p>Panamá, Costa Rica, México, Guatemala</p>
+                </div>
+                <div class="destination">
+                    <h3>Sudamérica</h3>
+                    <p>Lima, Quito, Buenos Aires, Santiago</p>
+                </div>
+                <div class="destination">
+                    <h3>Internacional</h3>
+                    <p>Madrid, París, Miami, Nueva York</p>
+                </div>
+            </destinations>
+        </section>
+
+        <section class="section">
+            <h2>Aerolíneas Disponibles</h2>
+            <div class="airlines">
+                <p><strong>Nacionales:</strong> Avianca, LATAM, Wingo, Ultra Air, JetSMART</p>
+                <p><strong>Internacionales:</strong> Copa, American Airlines, Delta, Air France, Iberia</p>
+                <p><strong>Low Cost:</strong> Spirit, Frontier, Volaris, VivaAerobus</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Servicios Incluidos</h2>
+            <p><strong>Búsqueda Inteligente:</strong> Comparamos todas las aerolíneas disponibles</p>
+            <p><strong>Alertas de Ofertas:</strong> Te avisamos cuando bajan los precios</p>
+            <p><strong>Cambios y Cancelaciones:</strong> Gestión sin costo adicional</p>
+            <p><strong>Check-in Asistido:</strong> Te ayudamos con el check-in online</p>
+            <p><strong>Selección Asientos:</strong> Asientos preferenciales disponibles</p>
+        </section>
+
+        <section class="section">
+            <h2>Proceso de Compra</h2>
+            <p><strong>1. Consulta:</strong> Envíanos origen, destino y fechas</p>
+            <p><strong>2. Opciones:</strong> Te mostramos las mejores alternativas</p>
+            <p><strong>3. Reserva:</strong> Apartamos el vuelo por 24 horas</p>
+            <p><strong>4. Pago:</strong> Confirmas con pago y recibes tiquetes</p>
+        </section>
+
+        <section class="section">
+            <h2>Ofertas Especiales</h2>
+            <p><strong>Estudiantes:</strong> 10% descuento adicional con carnet</p>
+            <p><strong>Grupos:</strong> Tarifas especiales para 10+ personas</p>
+            <p><strong>Ida y Vuelta:</strong> Mejor precio garantizado</p>
+            <p><strong>Última Hora:</strong> Ofertas flash hasta 50% descuento</p>
+        </section>
+
+        <div class="flight-box">
+            <h2>Encuentra tu Vuelo Ideal</h2>
+            <p>Mejor precio + mejor horario + mejor aerolínea</p>
+            <a href="https://wa.me/573126865031?text=Hola, necesito cotizar un vuelo desde Cali. Mi destino es: [DESTINO] y fechas: [FECHAS]" class="cta-button">
+                Cotizar Vuelo Ahora
+            </a>
+        </div>
+    </div>
+
+    <a href="https://wa.me/573126865031?text=Hola, quiero información sobre destinos nacionales con descuento" class="whatsapp-float" target="_blank">
+        <img src="ic_whatsapp.png" alt="WhatsApp" style="width: 60%; height: 60%;">
+    </a>
+</body>
+</html>

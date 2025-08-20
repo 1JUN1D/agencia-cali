@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agencia de Viajes Cali - Planes Turísticos Personalizados | Aventurarte</title>
+    <meta name="description" content="Agencia de viajes en Cali especializada en turismo nacional e internacional. Planes al Eje Cafetero, Cartagena, San Andrés y más destinos con descuentos exclusivos.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Header */
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #2c5aa0;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #2c5aa0;
+        }
+
+        .contact-btn {
+            background: #25D366;
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .contact-btn:hover {
+            background: #1ea952;
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+                        url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        .hero-content p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+        }
+
+        .cta-button {
+            background: #ff6b35;
+            color: white;
+            padding: 18px 36px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            background: #e55a2b;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(255, 107, 53, 0.4);
+        }
+
+        /* Featured Plans Section */
+        .featured-plans {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .plans-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .plan-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .plan-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            border-color: #ff6b35;
+        }
+
+        .plan-image {
+            height: 220px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .plan-content {
+            padding: 1.5rem;
+        }
+
+        .plan-content h3 {
+            color: #2c5aa0;
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+            font-weight: bold;
+        }
+
+        .plan-content p {
+            color: #666;
+            margin-bottom: 1rem;
+            line-height: 1.5;
+        }
+
+        .plan-price {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #ff6b35;
+            margin-bottom: 1.5rem;
+        }
+
+        .plan-btn {
+            background: #25D366;
+            color: white;
+            padding: 12px 20px;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            display: inline-block;
+            transition: all 0.3s ease;
+            width: 100%;
+            text-align: center;
+        }
+
+        .plan-btn:hover {
+            background: #1ea952;
+            transform: translateY(-2px);
+        }
+
+        /* Services Section */
+        .services {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #2c5aa0;
+            margin-bottom: 3rem;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .service-image {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .service-content {
+            padding: 1.5rem;
+        }
+
+        .service-content h3 {
+            color: #2c5aa0;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .service-content p {
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .service-links {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .service-links a {
+            color: #ff6b35;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+
+        .service-links a:hover {
+            color: #e55a2b;
+        }
+
+        /* WhatsApp Float Button */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 30px;
+            right: 30px;
+            background: #25D366;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 2rem;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            z-index: 1000;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            background: #1ea952;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, #0066ff, #fc4300);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        /* Footer */
+        .footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        /* Responsive */
+            @media (max-width: 768px) {
+                .plans-grid {
+                    grid-template-columns: 1fr;
+                }
+                
+                .hero-content h1 {
+                    font-size: 2.5rem;
+                }
+
+            .hero-content p {
+                font-size: 1.1rem;
+            }
+
+            .nav-container {
+                padding: 0 1rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .logo {
+                font-size: 1.5rem;
+            }
+
+            .contact-btn {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                bottom: 20px;
+                right: 20px;
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="nav-container">
+            <a href="/index.html" class="logo">🌍 Aventurarte</a>
+            <div class="nav-links">
+                <a href="/index.html">Inicio</a>
+                <a href="/agencia-de-turismo.html">Turismo Nacional</a>
+                <a href="/agencia-de-turismo-en-autobus.html">Turismo en Autobús</a>
+                <a href="/agencia-de-cruceros.html">Cruceros</a>
+                <a href="https://wa.me/573126865031" class="contact-btn" target="_blank">
+                    📱 Contáctanos
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Agencia de Viajes en Cali - Aventurarte</h1>
+            <p>Descubre destinos únicos con planes turísticos personalizados. Turismo nacional e internacional con descuentos exclusivos para ti.</p>
+            <a href="https://wa.me/573126865031?text=Hola, quiero información sobre destinos con descuento" class="cta-button" target="_blank">
+                Consultar Destinos con Descuento
+            </a>
+        </div>
+    </section>
+
+    <!-- Featured Plans Section -->
+    <section class="featured-plans">
+        <div class="container">
+            <h3 class="section-title">Planes Destacados</h3>
+            <p style="text-align: center; font-size: 1.2rem; color: #666; margin-bottom: 3rem;">Descubre nuestros destinos más populares con descuentos especiales</p>
+            
+            <div class="plans-grid">
+                <!-- Plan 1: Eje Cafetero -->
+                <div class="plan-card">
+                    <div class="plan-image" style="background-image: url('https://images.unsplash.com/photo-1540979388789-6cee28a1cdc9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80')"></div>
+                    <div class="plan-content">
+                        <h3>🇨🇴 Eje Cafetero Mágico</h3>
+                        <p>3 días y 2 noches en el corazón del café colombiano. Incluye hospedaje, tours guiados y degustaciones.</p>
+                        <div class="plan-price">Desde $450.000 COP</div>
+                        <a href="https://wa.me/573126865031?text=Hola, quiero información sobre el plan Eje Cafetero Mágico" class="plan-btn" target="_blank">
+                            💬 Preguntar por este Plan
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Plan 2: Cartagena -->
+                <div class="plan-card">
+                    <div class="plan-image" style="background-image: url('https://images.unsplash.com/photo-1605640840605-14ac1855827b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80')"></div>
+                    <div class="plan-content">
+                        <h3>🇨🇴 Cartagena Histórica</h3>
+                        <p>4 días en la ciudad amurallada. Tour centro histórico, Islas del Rosario y experiencia gastronómica.</p>
+                        <div class="plan-price">Desde $680.000 COP</div>
+                        <a href="https://wa.me/573126865031?text=Hola, quiero información sobre el plan Cartagena Histórica" class="plan-btn" target="_blank">
+                            💬 Preguntar por este Plan
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Plan 3: San Andrés -->
+                <div class="plan-card">
+                    <div class="plan-image" style="background-image: url('https://images.unsplash.com/photo-1559827260-dc66d52bef19?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80')"></div>
+                    <div class="plan-content">
+                        <h3>🇨🇴 San Andrés Paraíso</h3>
+                        <p>5 días en el mar de los 7 colores. Todo incluido con actividades acuáticas y excursiones.</p>
+                        <div class="plan-price">Desde $890.000 COP</div>
+                        <a href="https://wa.me/573126865031?text=Hola, quiero información sobre el plan San Andrés Paraíso" class="plan-btn" target="_blank">
+                            💬 Preguntar por este Plan
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Plan 4: Machu Picchu -->
+                <div class="plan-card">
+                    <div class="plan-image" style="background-image: url('https://images.unsplash.com/photo-1526392060635-9d6019884377?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80')"></div>
+                    <div class="plan-content">
+                        <h3>🇵🇪 Machu Picchu Místico</h3>
+                        <p>6 días entre Cusco y Machu Picchu. Incluye vuelos, hoteles, guías especializados y tren panorámico.</p>
+                        <div class="plan-price">Desde $1.850.000 COP</div>
+                        <a href="https://wa.me/573126865031?text=Hola, quiero información sobre el plan Machu Picchu Místico" class="plan-btn" target="_blank">
+                            💬 Preguntar por este Plan
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Plan 5: Costa Rica -->
+                <div class="plan-card">
+                    <div class="plan-image" style="background-image: url('/2.jpg')"></div>
+                    <div class="plan-content">
+                        <h3>🇨🇷 Costa Rica Aventura</h3>
+                        <p>7 días de pura vida. Volcanes, playas del Pacífico, canopy y biodiversidad única en el mundo.</p>
+                        <div class="plan-price">Desde $2.200.000 COP</div>
+                        <a href="https://wa.me/573126865031?text=Hola, quiero información sobre el plan Costa Rica Aventura" class="plan-btn" target="_blank">
+                            💬 Preguntar por este Plan
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Plan 6: Europa -->
+                <div class="plan-card">
+                    <div class="plan-image" style="background-image: url('https://images.unsplash.com/photo-1467269204594-9661b134dd2b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80')"></div>
+                    <div class="plan-content">
+                        <h3>🇪🇺 Europa Clásica</h3>
+                        <p>12 días por París, Roma, Barcelona y Amsterdam. Vuelos, hoteles 4★, desayunos y tours incluidos.</p>
+                        <div class="plan-price">Desde $4.800.000 COP</div>
+                        <a href="https://wa.me/573126865031?text=Hola, quiero información sobre el plan Europa Clásica" class="plan-btn" target="_blank">
+                            💬 Preguntar por este Plan
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services">
+        <div class="container">
+            <h3 class="section-title">Nuestros Servicios de Turismo</h3>
+            
+            <div class="services-grid">
+                <!-- Agencia de Turismo -->
+                <div class="service-card" onclick="window.location.href='agencia-de-turismo.html'">
+                    <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1544735716-392fe2489ffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80')"></div>
+                    <div class="service-content">
+                        <h2>Agencia de Turismo</h2>
+                        <p>Explora los destinos más hermosos de Colombia con nuestros planes especializados. Contacta un asesor para conocer próximos destinos con descuento.</p>
+                        <div class="service-links">
+                            <a href="planes-eje-cafetero-cali.html">• Planes Eje Cafetero desde Cali</a>
+                            <a href="turismo-cartagena-desde-cali.html">• Turismo Cartagena desde Cali</a>
+                            <a href="planes-san-andres-cali.html">• Planes San Andrés desde Cali</a>
+                            <a href="turismo-amazonas-desde-cali.html">• Turismo Amazonas desde Cali</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Agencia de Turismo en Autobús -->
+                <div class="service-card" onclick="window.location.href='agencia-de-turismo-en-autobus.html'">
+                    <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80')"></div>
+                    <div class="service-content">
+                        <h2>Agencia de Turismo en Autobús</h2>
+                        <p>Viajes cómodos y seguros por toda la región. Contacta por WhatsApp para consultar próximas salidas con descuentos especiales.</p>
+                        <div class="service-links">
+                            <a href="agencia-viajes-norte-cali.html">• Agencia de Viajes Norte Cali</a>
+                            <a href="turismo-sur-cali.html">• Turismo Sur Cali</a>
+                            <a href="planes-turisticos-oeste-cali.html">• Planes Turísticos Oeste Cali</a>
+                            <a href="agencia-viajes-centro-cali.html">• Agencia Viajes Centro Cali</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Agencia de Cruceros -->
+                <div class="service-card" onclick="window.location.href='agencia-de-cruceros.html'">
+                    <div class="service-image" style="background-image: url('/1.jpg')"></div>
+                    <div class="service-content">
+                        <h2>Agencia de Cruceros</h2>
+                        <p>Experiencias internacionales únicas con los mejores cruceros. Pregunta por WhatsApp sobre destinos específicos y promociones vigentes.</p>
+                        <div class="service-links">
+                            <a href="viajes-europa-desde-cali.html">• Viajes Europa desde Cali</a>
+                            <a href="planes-estados-unidos-cali.html">• Planes Estados Unidos Cali</a>
+                            <a href="turismo-mexico-desde-cali.html">• Turismo México desde Cali</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Centro de Información Turística -->
+                <div class="service-card" onclick="window.location.href='centro-de-informacion-turistica.html'">
+                    <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1488646953014-85cb44e25828?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80')"></div>
+                    <div class="service-content">
+                        <h2>Centro de Información Turística</h2>
+                        <p>Servicios completos para tu viaje perfecto. Contacta nuestro asesor para recibir información detallada y descuentos exclusivos.</p>
+                        <div class="service-links">
+                            <a href="reservas-hoteles-cali.html">• Reservas Hoteles Cali</a>
+                            <a href="boletos-aereos-cali.html">• Boletos Aéreos Cali</a>
+                            <a href="seguros-viaje-cali.html">• Seguros de Viaje Cali</a>
+                            <a href="visa-americana-cali.html">• Visa Americana Cali</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h3>¿Listo para Aventurarte?</h3>
+            <p>Contacta nuestro asesor especializado y recibe información sobre próximos destinos con descuentos exclusivos</p>
+            <a href="https://wa.me/573126865031?text=Hola, quiero información sobre planes turísticos con descuento" class="cta-button" target="_blank">
+                Consultar Asesor por WhatsApp
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Aventurarte - Agencia de Viajes Cali. Todos los derechos reservados.</p>
+            <p>📱 WhatsApp: +57 312 686 5031 | 📍 Cali, Valle del Cauca, Colombia</p>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/573126865031?text=Hola, quiero información sobre destinos nacionales con descuento" class="whatsapp-float" target="_blank">
+        <img src="ic_whatsapp.png" alt="WhatsApp" style="width: 60%; height: 60%;">
+    </a>
+
+
+</body>
+</html>

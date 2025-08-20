@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agencia de Turismo Cali - Destinos Nacionales Colombia | Aventurarte</title>
+    <meta name="description" content="Agencia de turismo en Cali especializada en destinos nacionales. Planes al Eje Cafetero, Cartagena, San Andrés y Amazonas con descuentos especiales desde Cali.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Header */
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #2c5aa0;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #2c5aa0;
+        }
+
+        .contact-btn {
+            background: #25D366;
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .contact-btn:hover {
+            background: #1ea952;
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 70vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                        url('https://images.unsplash.com/photo-1469474968028-56623f02e42e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            margin-top: 80px;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        .hero-content p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            max-width: 800px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+        }
+
+        .cta-button {
+            background: #ff6b35;
+            color: white;
+            padding: 18px 36px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            background: #e55a2b;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(255, 107, 53, 0.4);
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #2c5aa0;
+            margin-bottom: 3rem;
+        }
+
+        /* Intro Section */
+        .intro-section {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .intro-content {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .intro-content p {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 2rem;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .benefit-item {
+            text-align: center;
+            padding: 2rem;
+            background: #f8f9fa;
+            border-radius: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .benefit-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .benefit-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .benefit-item h3 {
+            color: #2c5aa0;
+            margin-bottom: 1rem;
+        }
+
+        /* Destinations Section */
+        .destinations-section {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+
+        .destinations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .destination-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .destination-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .destination-image {
+            height: 250px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .destination-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: #ff6b35;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        .destination-content {
+            padding: 2rem;
+        }
+
+        .destination-content h3 {
+            color: #2c5aa0;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .destination-content p {
+            color: #666;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .destination-features {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .destination-features li {
+            padding: 0.5rem 0;
+            color: #555;
+        }
+
+        .destination-features li:before {
+            content: "✓ ";
+            color: #25D366;
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+
+        .destination-price {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #ff6b35;
+            margin-bottom: 1.5rem;
+        }
+
+        .destination-btn {
+            background: #25D366;
+            color: white;
+            padding: 12px 20px;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            display: inline-block;
+            transition: all 0.3s ease;
+            width: 100%;
+            text-align: center;
+        }
+
+        .destination-btn:hover {
+            background: #1ea952;
+            transform: translateY(-2px);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, #2c5aa0, #ff6b35);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        /* WhatsApp Float Button */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 30px;
+            right: 30px;
+            background: #25D366;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 2rem;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            z-index: 1000;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            background: #1ea952;
+        }
+
+        /* Footer */
+        .footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 3rem 0;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #ff6b35;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero-content p {
+                font-size: 1.1rem;
+            }
+
+            .nav-container {
+                padding: 0 1rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .logo {
+                font-size: 1.5rem;
+            }
+
+            .contact-btn {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .destinations-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                bottom: 20px;
+                right: 20px;
+                font-size: 1.5rem;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="nav-container">
+            <a href="/index.html" class="logo">🌍 Aventurarte</a>
+            <div class="nav-links">
+                <a href="/index.html">Inicio</a>
+                <a href="/agencia-de-turismo.html">Turismo Nacional</a>
+                <a href="/agencia-de-turismo-en-autobus.html">Turismo en Autobús</a>
+                <a href="/agencia-de-cruceros.html">Cruceros</a>
+                <a href="https://wa.me/573126865031" class="contact-btn" target="_blank">
+                    📱 Contáctanos
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Agencia de Turismo Cali - Descubre Colombia</h1>
+            <p>Especialistas en turismo nacional desde Cali. Te llevamos a conocer los destinos más hermosos de Colombia con planes personalizados y descuentos exclusivos.</p>
+            <a href="https://wa.me/573126865031?text=Hola, quiero información sobre destinos nacionales con descuento" class="cta-button" target="_blank">
+                Consultar Destinos Disponibles
+            </a>
+        </div>
+    </section>
+
+    <!-- Intro Section -->
+    <section class="intro-section">
+        <div class="container">
+            <div class="intro-content">
+                <h2 class="section-title">¿Por Qué Elegir Nuestra Agencia de Turismo?</h2>
+                <p>Somos especialistas en turismo nacional desde Cali con más de 10 años conectando viajeros con los destinos más increíbles de Colombia. Nuestro equipo conoce cada rincón del país y diseña experiencias únicas para cada tipo de viajero.</p>
+                <p>Desde el Eje Cafetero hasta las playas del Caribe, te acompañamos en cada paso de tu aventura con precios especiales y atención personalizada las 24 horas.</p>
+            </div>
+
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <div class="benefit-icon">🎯</div>
+                    <h3>Planes Personalizados</h3>
+                    <p>Adaptamos cada viaje a tus gustos, presupuesto y tiempo disponible</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">💰</div>
+                    <h3>Precios Especiales</h3>
+                    <p>Descuentos exclusivos y promociones solo para nuestros clientes</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">🏆</div>
+                    <h3>Experiencia Local</h3>
+                    <p>Conocemos Colombia como nadie, te mostramos lugares únicos</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">📱</div>
+                    <h3>Atención 24/7</h3>
+                    <p>Soporte constante antes, durante y después de tu viaje</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Destinations Section -->
+    <section class="destinations-section">
+        <div class="container">
+            <h2 class="section-title">Destinos Nacionales Disponibles</h2>
+            
+            <div class="destinations-grid">
+                <!-- Eje Cafetero -->
+                <div class="destination-card" onclick="window.location.href='planes-eje-cafetero-cali.html'">
+                    <div class="destination-image" style="background-image: url('https://images.unsplash.com/photo-1540979388789-6cee28a1cdc9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80')">
+                        <div class="destination-badge">🔥 Promoción</div>
+                    </div>
+                    <div class="destination-content">
+                        <h3>Planes Eje Cafetero desde Cali</h3>
+                        <p>Sumérgete en la cultura cafetera de Colombia. Visita fincas tradicionales, degusta el mejor café del mundo y disfruta de paisajes únicos en Armenia, Pereira y Manizales.</p>
+                        <ul class="destination-features">
+                            <li>3 días y 2 noches</li>
+                            <li>Tour por fincas cafeteras</li>
+                            <li>Degustación de café premium</li>
+                            <li>Transporte desde Cali</li>
+                            <li>Hospedaje incluido</li>
+                            <li>Guía especializado</li>
+                        </ul>
+                        <div class="destination-price">Desde $450.000 COP</div>
+                        <a href="https://wa.me/573126865031?text=Hola, quiero información sobre Planes Eje Cafetero desde Cali" class="destination-btn" target="_blank">
+                            💬 Consultar Plan Eje Cafetero
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Cartagena -->
+                <div class="destination-card" onclick="window.location.href='turismo-cartagena-desde-cali.html'">
+                    <div class="destination-image" style="background-image: url('https://images.unsplash.com/photo-1605640840605-14ac1855827b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80')">
+                        <div class="destination-badge">⭐ Popular</div>
+                    </div>
+                    <div class="destination-content">
+                        <h3>Turismo Cartagena desde Cali</h3>
+                        <p>Descubre la ciudad amurallada más hermosa del Caribe. Historia colonial, playas paradisíacas y la mejor gastronomía costeña te esperan en esta experiencia inolvidable.</p>
+                        <ul class="destination-features">
+                            <li>4 días y 3 noches</li>
+                            <li>Tour centro histórico</li>
+                            <li>Islas del Rosario</li>
+                            <li>Vuelos desde Cali</li>
+                            <li>Hotel en zona turística</li>
+                            <li>Experiencia gastronómica</li>
+                        </ul>
+                        <div class="destination-price">Desde $680.000 COP</div>
+                        <a href="https://wa.me/573126865031?text=Hola, quiero información sobre Turismo Cartagena desde Cali" class="destination-btn" target="_blank">
+                            💬 Consultar Plan Cartagena
+                        </a>
+                    </div>
+                </div>
+
+                <!-- San Andrés -->
+                <div class="destination-card" onclick="window.location.href='planes-san-andres-cali.html'">
+                    <div class="destination-image" style="background-image: url('https://images.unsplash.com/photo-1559827260-dc66d52bef19?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80')">
+                        <div class="destination-badge">🏝️ Todo Incluido</div>
+                    </div>
+                    <div class="destination-content">
+                        <h3>Planes San Andrés desde Cali</h3>
+                        <p>El paraíso del mar de los 7 colores te está esperando. Playas de arena blanca, aguas cristalinas y actividades acuáticas en una de las islas más hermosas del Caribe.</p>
+                        <ul class="destination-features">
+                            <li>5 días y 4 noches</li>
+                            <li>Vuelos ida y vuelta</li>
+                            <li>Hotel todo incluido</li>
+                            <li>Actividades acuáticas</li>
+                            <li>Tour Johnny Cay</li>
+                            <li>Snorkeling incluido</li>
+                        </ul>
+                        <div class="destination-price">Desde $890.000 COP</div>
+                        <a href="https://wa.me/573126865031?text=Hola, quiero información sobre Planes San Andrés desde Cali" class="destination-btn" target="_blank">
+                            💬 Consultar Plan San Andrés
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Amazonas -->
+                <div class="destination-card" onclick="window.location.href='turismo-amazonas-desde-cali.html'">
+                    <div class="destination-image" style="background-image: url('/3.jpg')">
+                        <div class="destination-badge">🌿 Aventura</div>
+                    </div>
+                    <div class="destination-content">
+                        <h3>Turismo Amazonas desde Cali</h3>
+                        <p>Vive una experiencia única en el pulmón del mundo. Conoce la biodiversidad más rica del planeta, comunidades indígenas y paisajes que te conectarán con la naturaleza.</p>
+                        <ul class="destination-features">
+                            <li>4 días y 3 noches</li>
+                            <li>Vuelo Cali - Leticia</li>
+                            <li>Ecolodge en selva</li>
+                            <li>Avistamiento de delfines</li>
+                            <li>Comunidades indígenas</li>
+                            <li>Caminatas ecológicas</li>
+                        </ul>
+                        <div class="destination-price">Desde $950.000 COP</div>
+                        <a href="https://wa.me/573126865031?text=Hola, quiero información sobre Turismo Amazonas desde Cali" class="destination-btn" target="_blank">
+                            💬 Consultar Plan Amazonas
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>¿Listo para tu Próxima Aventura?</h2>
+            <p>Nuestros asesores especializados te ayudarán a elegir el destino perfecto y te darán información sobre próximos descuentos exclusivos</p>
+            <a href="https://wa.me/573126865031?text=Hola, quiero información sobre planes de turismo nacional con descuento" class="cta-button" target="_blank">
+                Hablar con un Asesor Ahora
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="/index.html">Inicio</a>
+                <a href="agencia-de-turismo.html">Turismo Nacional</a>
+                <a href="agencia-de-turismo-en-autobus.html">Turismo en Autobús</a>
+                <a href="agencia-de-cruceros.html">Cruceros</a>
+                <a href="centro-de-informacion-turistica.html">Información Turística</a>
+            </div>
+            <p>&copy; 2025 Aventurarte - Agencia de Turismo Cali. Todos los derechos reservados.</p>
+            <p>📱 WhatsApp: +57 312 686 5031 | 📍 Cali, Valle del Cauca, Colombia</p>
+            <p>Especialistas en turismo nacional desde Cali</p>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/573126865031?text=Hola, quiero información sobre destinos nacionales con descuento" class="whatsapp-float" target="_blank">
+        <img src="ic_whatsapp.png" alt="WhatsApp" style="width: 60%; height: 60%;">
+    </a>
+
+</body>
+</html>

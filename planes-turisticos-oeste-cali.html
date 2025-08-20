@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planes Turísticos Oeste Cali - Ecoturismo y Aventura | Aventurarte</title>
+    <meta name="description" content="Planes turísticos desde oeste de Cali. Especialistas en ecoturismo y aventura. Recogidas en Aventura Plaza, Zona Rosa, Menga. Tours familiares y deportivos.">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
+
+        .header {
+            background: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        .nav { max-width: 1200px; margin: 0 auto; padding: 0 2rem; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 1.5rem; font-weight: bold; color: #2c5aa0; text-decoration: none; }
+        .contact-btn {
+            background: #25D366;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+        }
+
+        .hero {
+            height: 60vh;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+                        url('/6.jpg') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            margin-top: 70px;
+        }
+        .hero h1 { font-size: 2.5rem; margin-bottom: 1rem; }
+        .hero p { font-size: 1.2rem; margin-bottom: 2rem; max-width: 600px; }
+
+        .container { max-width: 800px; margin: 0 auto; padding: 3rem 2rem; }
+        .section { margin-bottom: 3rem; }
+        .section h2 { color: #228B22; margin-bottom: 1rem; font-size: 1.8rem; }
+
+        .adventure-box {
+            background: linear-gradient(135deg, #228B22, #32CD32);
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            margin: 2rem 0;
+        }
+        .adventure-title { font-size: 2rem; font-weight: bold; margin-bottom: 1rem; }
+        .adventure-detail { opacity: 0.9; margin-bottom: 2rem; }
+
+        .locations {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        .location {
+            background: #f0fff0;
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            border-left: 4px solid #228B22;
+        }
+        .location h3 { color: #228B22; margin-bottom: 0.5rem; }
+
+        .activities {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        .activity {
+            background: linear-gradient(135deg, #e8f5e8, #f0fff0);
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .activity h3 { color: #228B22; margin-bottom: 0.5rem; }
+
+        .cta-button {
+            background: #25D366;
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            display: inline-block;
+            text-align: center;
+            width: 100%;
+            margin: 1rem 0;
+        }
+
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 30px;
+            right: 30px;
+            background: #25D366;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 2rem;
+            z-index: 1000;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .hero p { font-size: 1rem; }
+            .nav { padding: 0 1rem; }
+            .locations, .activities { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="nav">
+            <a href="/index.html" class="logo">🌍 Aventurarte</a>
+            <a href="https://wa.me/573126865031" class="contact-btn">Contactar</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div>
+            <h1>Planes Turísticos Oeste Cali</h1>
+            <p>Especialistas en ecoturismo y aventura desde el oeste de Cali. Planes familiares, deportivos y conexión con la naturaleza.</p>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="adventure-box">
+            <div class="adventure-title">Ecoturismo & Aventura</div>
+            <div class="adventure-detail">Planes especializados en naturaleza y deportes extremos</div>
+            <a href="https://wa.me/573126865031?text=Hola, vivo en el oeste de Cali y busco planes de ecoturismo y aventura" class="cta-button">
+                Consultar Planes de Aventura
+            </a>
+        </div>
+
+        <section class="section">
+            <h2>Puntos de Encuentro Oeste Cali</h2>
+            <div class="locations">
+                <div class="location">
+                    <h3>Aventura Plaza</h3>
+                    <p>Centro Comercial Aventura Plaza - Torre Norte</p>
+                </div>
+                <div class="location">
+                    <h3>Zona Rosa</h3>
+                    <p>Zona Rosa - Parque Principal</p>
+                </div>
+                <div class="location">
+                    <h3>Menga</h3>
+                    <p>Estación Menga MIO - Zona de espera</p>
+                </div>
+                <div class="location">
+                    <h3>Terminal Oeste</h3>
+                    <p>Terminal Oeste - Sala de espera</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Tipos de Aventura</h2>
+            <div class="activities">
+                <div class="activity">
+                    <h3>Senderismo</h3>
+                    <p>Caminatas ecológicas en Farallones y Pance</p>
+                </div>
+                <div class="activity">
+                    <h3>Deportes Extremos</h3>
+                    <p>Rappel, canopy y escalada en roca</p>
+                </div>
+                <div class="activity">
+                    <h3>Rafting</h3>
+                    <p>Descenso de ríos en Dagua y Anchicayá</p>
+                </div>
+                <div class="activity">
+                    <h3>Ciclomontañismo</h3>
+                    <p>Rutas en bicicleta por montañas cercanas</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Destinos Naturales</h2>
+            <p><strong>Farallones de Cali:</strong> Reserva natural con senderos y avistamiento de aves</p>
+            <p><strong>Pance:</strong> Río cristalino ideal para familias y deportes acuáticos</p>
+            <p><strong>La Vorágine:</strong> Cascadas naturales y piscinas de agua fría</p>
+            <p><strong>Lago Calima:</strong> Deportes náuticos y viento para kitesurf</p>
+        </section>
+
+        <section class="section">
+            <h2>Servicios Especializados</h2>
+            <p><strong>Guías Expertos:</strong> Instructores certificados en deportes de aventura</p>
+            <p><strong>Equipos Incluidos:</strong> Cascos, arneses y equipos de seguridad</p>
+            <p><strong>Grupos Familiares:</strong> Actividades adaptadas para todas las edades</p>
+            <p><strong>Fotografía:</strong> Sesiones fotográficas profesionales incluidas</p>
+        </section>
+
+        <div class="adventure-box">
+            <h2>Vive la Aventura</h2>
+            <p>Conecta con la naturaleza desde el oeste de Cali</p>
+            <a href="https://wa.me/573126865031?text=Hola, quiero reservar un plan de ecoturismo desde el oeste de Cali. ¿Qué actividades tienen disponibles?" class="cta-button">
+                Reservar Aventura Natural
+            </a>
+        </div>
+    </div>
+
+    <a href="https://wa.me/573126865031?text=Hola, quiero información sobre destinos nacionales con descuento" class="whatsapp-float" target="_blank">
+        <img src="ic_whatsapp.png" alt="WhatsApp" style="width: 60%; height: 60%;">
+    </a>
+</body>
+</html>

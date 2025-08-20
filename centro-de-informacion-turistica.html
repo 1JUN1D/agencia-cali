@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centro de Información Turística Cali - Reservas, Boletos, Seguros y Visas | Aventurarte</title>
+    <meta name="description" content="Centro de información turística en Cali. Reservas de hoteles, boletos aéreos, seguros de viaje y tramitación de visas americanas. Servicios completos para tu viaje perfecto.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Header */
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #2c5aa0;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #2c5aa0;
+        }
+
+        .contact-btn {
+            background: #25D366;
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .contact-btn:hover {
+            background: #1ea952;
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 70vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                        url('https://images.unsplash.com/photo-1488646953014-85cb44e25828?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            margin-top: 80px;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        .hero-content p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            max-width: 800px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+        }
+
+        .cta-button {
+            background: #ff6b35;
+            color: white;
+            padding: 18px 36px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            background: #e55a2b;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(255, 107, 53, 0.4);
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #2c5aa0;
+            margin-bottom: 3rem;
+        }
+
+        /* Intro Section */
+        .intro-section {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .intro-content {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .intro-content p {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 2rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 2rem;
+            background: linear-gradient(135deg, #e8f5e8, #f0f8ff);
+            border-radius: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .stat-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #2c5aa0;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: #666;
+            font-weight: 500;
+        }
+
+        /* Services Section */
+        .services-section {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .service-image {
+            height: 220px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .service-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: #ff6b35;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        .service-icon {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: rgba(44, 90, 160, 0.9);
+            color: white;
+            padding: 10px;
+            border-radius: 50%;
+            font-size: 1.5rem;
+        }
+
+        .service-content {
+            padding: 2rem;
+        }
+
+        .service-content h3 {
+            color: #2c5aa0;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .service-content p {
+            color: #666;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .service-features {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .service-features li {
+            padding: 0.5rem 0;
+            color: #555;
+            display: flex;
+            align-items: center;
+        }
+
+        .service-features li:before {
+            content: "✓";
+            color: #25D366;
+            font-weight: bold;
+            margin-right: 0.5rem;
+            background: #e8f5e8;
+            padding: 2px 6px;
+            border-radius: 50%;
+            font-size: 0.8rem;
+        }
+
+        .service-process {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 10px;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-process h4 {
+            color: #2c5aa0;
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+
+        .service-process p {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 0;
+        }
+
+        .service-btn {
+            background: #25D366;
+            color: white;
+            padding: 12px 20px;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            display: inline-block;
+            transition: all 0.3s ease;
+            width: 100%;
+            text-align: center;
+        }
+
+        .service-btn:hover {
+            background: #1ea952;
+            transform: translateY(-2px);
+        }
+
+        /* Benefits Section */
+        .benefits-section {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .benefit-item {
+            text-align: center;
+            padding: 2rem;
+            background: linear-gradient(135deg, #2c5aa0, #ff6b35);
+            color: white;
+            border-radius: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .benefit-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .benefit-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .benefit-item h3 {
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+        }
+
+        .benefit-item p {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        /* Process Section */
+        .process-section {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .process-step {
+            text-align: center;
+            position: relative;
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: #2c5aa0;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 0 auto 1rem;
+        }
+
+        .process-step h3 {
+            color: #2c5aa0;
+            margin-bottom: 1rem;
+        }
+
+        .process-step p {
+            color: #666;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, #2c5aa0, #ff6b35);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        /* WhatsApp Float Button */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 30px;
+            right: 30px;
+            background: #25D366;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 2rem;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            z-index: 1000;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            background: #1ea952;
+        }
+
+        /* Footer */
+        .footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 3rem 0;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #ff6b35;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero-content p {
+                font-size: 1.1rem;
+            }
+
+            .nav-container {
+                padding: 0 1rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .logo {
+                font-size: 1.5rem;
+            }
+
+            .contact-btn {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .process-steps {
+                grid-template-columns: 1fr;
+            }
+
+            .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                bottom: 20px;
+                right: 20px;
+                font-size: 1.5rem;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="nav-container">
+            <a href="/index.html" class="logo">🌍 Aventurarte</a>
+            <div class="nav-links">
+                <a href="/index.html">Inicio</a>
+                <a href="/agencia-de-turismo.html">Turismo Nacional</a>
+                <a href="/agencia-de-turismo-en-autobus.html">Turismo en Autobús</a>
+                <a href="/agencia-de-cruceros.html">Cruceros</a>
+                <a href="https://wa.me/573126865031" class="contact-btn" target="_blank">
+                    📱 Contáctanos
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/573126865031?text=Hola, quiero información sobre servicios turísticos completos" class="whatsapp-float" target="_blank">
+        📱
+    </a>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Centro de Información Turística Cali - Tu Viaje Perfecto</h1>
+            <p>Centro especializado en servicios turísticos completos desde Cali. Reservas de hoteles, boletos aéreos, seguros de viaje y tramitación de visas americanas con asesoramiento personalizado 24/7.</p>
+            <a href="https://wa.me/573126865031?text=Hola, necesito información sobre servicios turísticos completos" class="cta-button" target="_blank">
+                Consultar Servicios Disponibles
+            </a>
+        </div>
+    </section>
+
+    <!-- Intro Section -->
+    <section class="intro-section">
+        <div class="container">
+            <div class="intro-content">
+                <h2 class="section-title">Tu Centro de Información Turística de Confianza</h2>
+                <p>Somos el centro de información turística más completo de Cali con más de 15 años simplificando los viajes de colombianos hacia cualquier destino del mundo. Nos encargamos de todos los detalles para que solo te preocupes por disfrutar.</p>
+                <p>Desde la reserva de tu hotel hasta la tramitación de visas internacionales, nuestro equipo especializado te acompaña en cada paso con precios preferenciales y garantía total.</p>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">15K+</div>
+                    <div class="stat-label">Reservas Procesadas</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">98%</div>
+                    <div class="stat-label">Satisfacción Cliente</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">24/7</div>
+                    <div class="stat-label">Soporte Disponible</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">50+</div>
+                    <div class="stat-label">Países Atendidos</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services-section">
+        <div class="container">
+            <h2 class="section-title">Servicios Turísticos Completos</h2>
+            
+            <div class="services-grid">
+                <!-- Reservas Hoteles -->
+                <div class="service-card" onclick="window.location.href='reservas-hoteles-cali.html'">
+                    <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1564501049412-61c2a3083791?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80')">
+                        <div class="service-icon">🏨</div>
+                        <div class="service-badge">⭐ Mejores Tarifas</div>
+                    </div>
+                    <div class="service-content">
+                        <h3>Reservas Hoteles Cali</h3>
+                        <p>Reservamos hoteles en cualquier destino mundial con las mejores tarifas del mercado. Acceso a inventario especial y precios no disponibles al público general.</p>
+                        
+                        <div class="service-process">
+                            <h4>📋 Proceso Rápido:</h4>
+                            <p>Consulta → Cotización → Reserva confirmada en 2 horas</p>
+                        </div>
+
+                        <ul class="service-features">
+                            <li>Hoteles desde 2 hasta 5 estrellas</li>
+                            <li>Tarifas preferenciales exclusivas</li>
+                            <li>Cancelación flexible disponible</li>
+                            <li>Confirmación inmediata</li>
+                            <li>Soporte durante tu estadía</li>
+                            <li>Descuentos por estadías largas</li>
+                        </ul>
+                        
+                        <a href="https://wa.me/573126865031?text=Hola, quiero información sobre Reservas de Hoteles" class="service-btn" target="_blank">
+                            💬 Consultar Reservas Hoteles
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Boletos Aéreos -->
+                <div class="service-card" onclick="window.location.href='boletos-aereos-cali.html'">
+                    <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1436491865332-7a61a109cc05?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80')">
+                        <div class="service-icon">✈️</div>
+                        <div class="service-badge">🔥 Ofertas Diarias</div>
+                    </div>
+                    <div class="service-content">
+                        <h3>Boletos Aéreos Cali</h3>
+                        <p>Boletos aéreos nacionales e internacionales con las mejores aerolíneas y precios más competitivos. Monitoreo constante de ofertas especiales.</p>
+                        
+                        <div class="service-process">
+                            <h4>🎯 Búsqueda Inteligente:</h4>
+                            <p>Comparamos 500+ aerolíneas para encontrar el mejor precio</p>
+                        </div>
+
+                        <ul class="service-features">
+                            <li>Vuelos nacionales e internacionales</li>
+                            <li>Todas las aerolíneas disponibles</li>
+                            <li>Alertas de ofertas especiales</li>
+                            <li>Cambios y cancelaciones</li>
+                            <li>Check-in online asistido</li>
+                            <li>Selección de asientos premium</li>
+                        </ul>
+                        
+                        <a href="https://wa.me/573126865031?text=Hola, quiero información sobre Boletos Aéreos" class="service-btn" target="_blank">
+                            💬 Consultar Boletos Aéreos
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Seguros de Viaje -->
+                <div class="service-card" onclick="window.location.href='seguros-viaje-cali.html'">
+                    <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1559827260-dc66d52bef19?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80')">
+                        <div class="service-icon">🛡️</div>
+                        <div class="service-badge">✅ Obligatorio</div>
+                    </div>
+                    <div class="service-content">
+                        <h3>Seguros de Viaje Cali</h3>
+                        <p>Seguros de viaje internacionales con cobertura completa. Protección médica, cancelaciones, equipaje y asistencia 24/7 en cualquier parte del mundo.</p>
+                        
+                        <div class="service-process">
+                            <h4>🔒 Cobertura Total:</h4>
+                            <p>Desde $15.000 COP/día con cobertura hasta USD $100.000</p>
+                        </div>
+
+                        <ul class="service-features">
+                            <li>Cobertura médica internacional</li>
+                            <li>Cancelación de viaje</li>
+                            <li>Pérdida de equipaje</li>
+                            <li>Repatriación sanitaria</li>
+                            <li>Asistencia legal 24/7</li>
+                            <li>Deportes de aventura incluidos</li>
+                        </ul>
+                        
+                        <a href="https://wa.me/573126865031?text=Hola, quiero información sobre Seguros de Viaje" class="service-btn" target="_blank">
+                            💬 Consultar Seguros de Viaje
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Visa Americana -->
+                <div class="service-card" onclick="window.location.href='visa-americana-cali.html'">
+                    <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1518105779142-d975f22f1b0a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80')">
+                        <div class="service-icon">🇺🇸</div>
+                        <div class="service-badge">👨‍💼 Especialistas</div>
+                    </div>
+                    <div class="service-content">
+                        <h3>Visa Americana Cali</h3>
+                        <p>Tramitación completa de visa americana con especialistas certificados. Asesoramiento personalizado, preparación de documentos y acompañamiento en entrevista.</p>
+                        
+                        <div class="service-process">
+                            <h4>📈 Alta Tasa de Éxito:</h4>
+                            <p>92% de aprobación con nuestro acompañamiento especializado</p>
+                        </div>
+
+                        <ul class="service-features">
+                            <li>Asesoramiento personalizado</li>
+                            <li>Preparación de documentos</li>
+                            <li>Llenado de formularios DS-160</li>
+                            <li>Agendamiento de citas</li>
+                            <li>Preparación para entrevista</li>
+                            <li>Seguimiento hasta aprobación</li>
+                        </ul>
+                        
+                        <a href="https://wa.me/573126865031?text=Hola, quiero información sobre Visa Americana" class="service-btn" target="_blank">
+                            💬 Consultar Visa Americana
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits-section">
+        <div class="container">
+            <h2 class="section-title">¿Por Qué Elegir Nuestro Centro?</h2>
+            
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <div class="benefit-icon">💰</div>
+                    <h3>Precios Preferenciales</h3>
+                    <p>Acceso a tarifas corporativas y descuentos no disponibles al público</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">⚡</div>
+                    <h3>Gestión Rápida</h3>
+                    <p>Procesamiento express de reservas y tramitación en tiempo récord</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">🎯</div>
+                    <h3>Asesoramiento Experto</h3>
+                    <p>Equipo especializado con 15+ años de experiencia en turismo</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">🛡️</div>
+                    <h3>Garantía Total</h3>
+                    <p>Respaldamos todos nuestros servicios con garantía de satisfacción</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">📱</div>
+                    <h3>Soporte 24/7</h3>
+                    <p>Asistencia constante antes, durante y después de tu viaje</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">🌟</div>
+                    <h3>Servicio Personalizado</h3>
+                    <p>Atención individual adaptada a tus necesidades específicas</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process-section">
+        <div class="container">
+            <h2 class="section-title">Proceso Simple en 4 Pasos</h2>
+            
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h3>Consulta</h3>
+                    <p>Contáctanos por WhatsApp y cuéntanos qué necesitas para tu viaje</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h3>Cotización</h3>
+                    <p>Te enviamos opciones personalizadas con los mejores precios del mercado</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h3>Confirmación</h3>
+                    <p>Procesas el pago y confirmamos tu reserva inmediatamente</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h3>Disfruta</h3>
+                    <p>Viaja tranquilo con nuestro soporte 24/7 durante toda tu experiencia</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>¿Listo para Planificar tu Viaje Perfecto?</h2>
+            <p>Nuestros especialistas en turismo te ayudarán con todos los detalles. Consulta precios especiales y descuentos exclusivos para servicios combinados</p>
+            <a href="https://wa.me/573126865031?text=Hola, quiero información completa sobre servicios turísticos con descuento" class="cta-button" target="_blank">
+                Consultar Especialista Ahora
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="/index.html">Inicio</a>
+                <a href="agencia-de-turismo.html.html">Turismo Nacional</a>
+                <a href="agencia-de-turismo-en-autobus.html">Turismo en Autobús</a>
+                <a href="agencia-de-cruceros.html">Cruceros</a>
+                <a href="centro-de-informacion-turistica.html">Información Turística</a>
+            </div>
+            <p>&copy; 2025 Aventurarte - Agencia de Turismo Cali. Todos los derechos reservados.</p>
+            <p>📱 WhatsApp: +57 312 686 5031 | 📍 Cali, Valle del Cauca, Colombia</p>
+            <p>Especialistas en turismo nacional desde Cali</p>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/573126865031?text=Hola, quiero información sobre destinos nacionales con descuento" class="whatsapp-float" target="_blank">
+        <img src="ic_whatsapp.png" alt="WhatsApp" style="width: 60%; height: 60%;">
+    </a>
+
+
+</body>
+</html>

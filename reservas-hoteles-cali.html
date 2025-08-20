@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservas Hoteles Cali - Mejores Tarifas Mundiales | Aventurarte</title>
+    <meta name="description" content="Reservas de hoteles desde Cali para cualquier destino mundial. Tarifas preferenciales, confirmación inmediata y cancelación flexible. Hoteles 2 a 5 estrellas.">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
+
+        .header {
+            background: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        .nav { max-width: 1200px; margin: 0 auto; padding: 0 2rem; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 1.5rem; font-weight: bold; color: #2c5aa0; text-decoration: none; }
+        .contact-btn {
+            background: #25D366;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+        }
+
+        .hero {
+            height: 60vh;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+                        url('https://images.unsplash.com/photo-1564501049412-61c2a3083791?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            margin-top: 70px;
+        }
+        .hero h1 { font-size: 2.5rem; margin-bottom: 1rem; }
+        .hero p { font-size: 1.2rem; margin-bottom: 2rem; max-width: 600px; }
+
+        .container { max-width: 800px; margin: 0 auto; padding: 3rem 2rem; }
+        .section { margin-bottom: 3rem; }
+        .section h2 { color: #FF6347; margin-bottom: 1rem; font-size: 1.8rem; }
+
+        .service-box {
+            background: linear-gradient(135deg, #FF6347, #FF4500);
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            margin: 2rem 0;
+        }
+        .service-title { font-size: 2rem; font-weight: bold; margin-bottom: 1rem; }
+        .service-detail { opacity: 0.9; margin-bottom: 2rem; }
+
+        .categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        .category {
+            background: #fff5f5;
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            border-top: 4px solid #FF6347;
+        }
+        .category h3 { color: #FF6347; margin-bottom: 0.5rem; }
+
+        .process {
+            background: #f0f8ff;
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+        }
+
+        .cta-button {
+            background: #25D366;
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            display: inline-block;
+            text-align: center;
+            width: 100%;
+            margin: 1rem 0;
+        }
+
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 30px;
+            right: 30px;
+            background: #25D366;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 2rem;
+            z-index: 1000;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .hero p { font-size: 1rem; }
+            .nav { padding: 0 1rem; }
+            .categories { grid-template-columns: repeat(2, 1fr); }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="nav">
+            <a href="/index.html" class="logo">🌍 Aventurarte</a>
+            <a href="https://wa.me/573126865031" class="contact-btn">Contactar</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div>
+            <h1>Reservas Hoteles Cali</h1>
+            <p>Reservamos hoteles en cualquier destino mundial con las mejores tarifas. Acceso a inventario especial y precios preferenciales.</p>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="service-box">
+            <div class="service-title">Mejores Tarifas Garantizadas</div>
+            <div class="service-detail">Confirmación en 2 horas máximo</div>
+            <a href="https://wa.me/573126865031?text=Hola, necesito reservar un hotel. ¿Pueden ayudarme con las mejores tarifas?" class="cta-button">
+                Consultar Reserva Hotel
+            </a>
+        </div>
+
+        <section class="section">
+            <h2>Categorías de Hoteles</h2>
+            <div class="categories">
+                <div class="category">
+                    <h3>2 Estrellas</h3>
+                    <p>Económicos, limpios, ubicación céntrica</p>
+                </div>
+                <div class="category">
+                    <h3>3 Estrellas</h3>
+                    <p>Confort básico, desayuno incluido</p>
+                </div>
+                <div class="category">
+                    <h3>4 Estrellas</h3>
+                    <p>Servicios premium, spa, piscina</p>
+                </div>
+                <div class="category">
+                    <h3>5 Estrellas</h3>
+                    <p>Lujo máximo, servicio personalizado</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Proceso de Reserva</h2>
+            <div class="process">
+                <p><strong>Paso 1:</strong> Consulta por WhatsApp con fechas y destino</p>
+                <p><strong>Paso 2:</strong> Te enviamos opciones con precios preferenciales</p>
+                <p><strong>Paso 3:</strong> Eliges el hotel y confirmas con 30% anticipo</p>
+                <p><strong>Paso 4:</strong> Recibes confirmación inmediata y voucher</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Ventajas Exclusivas</h2>
+            <p><strong>Tarifas Corporativas:</strong> Precios no disponibles al público</p>
+            <p><strong>Cancelación Flexible:</strong> Hasta 24 horas antes sin costo</p>
+            <p><strong>Upgrades Gratis:</strong> Mejoras de habitación sin costo adicional</p>
+            <p><strong>Soporte 24/7:</strong> Asistencia durante tu estadía</p>
+        </section>
+
+        <section class="section">
+            <h2>Destinos Disponibles</h2>
+            <p>Reservamos hoteles en cualquier ciudad del mundo:</p>
+            <p>• Nacional: Bogotá, Medellín, Cartagena, San Andrés</p>
+            <p>• Internacional: París, Roma, Nueva York, Cancún, Miami</p>
+        </section>
+
+        <div class="service-box">
+            <h2>Reserva tu Hotel Ahora</h2>
+            <p>Mejor precio garantizado o devolvemos la diferencia</p>
+            <a href="https://wa.me/573126865031?text=Hola, quiero reservar un hotel con la mejor tarifa disponible. Mi destino es:" class="cta-button">
+                Solicitar Cotización Hotel
+            </a>
+        </div>
+    </div>
+
+    <a href="https://wa.me/573126865031?text=Hola, quiero información sobre destinos nacionales con descuento" class="whatsapp-float" target="_blank">
+        <img src="ic_whatsapp.png" alt="WhatsApp" style="width: 60%; height: 60%;">
+    </a>
+</body>
+</html>

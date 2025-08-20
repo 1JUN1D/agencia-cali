@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agencia de Turismo en Autobús Cali - Viajes Cómodos por Zonas | Aventurarte</title>
+    <meta name="description" content="Agencia de turismo en autobús en Cali. Viajes cómodos y seguros por Norte, Sur, Oeste y Centro de Cali. Planes turísticos especializados por zonas con descuentos.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Header */
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #2c5aa0;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #2c5aa0;
+        }
+
+        .contact-btn {
+            background: #25D366;
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .contact-btn:hover {
+            background: #1ea952;
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 70vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                        url('https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            margin-top: 80px;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        .hero-content p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            max-width: 800px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+        }
+
+        .cta-button {
+            background: #ff6b35;
+            color: white;
+            padding: 18px 36px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            background: #e55a2b;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(255, 107, 53, 0.4);
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #2c5aa0;
+            margin-bottom: 3rem;
+        }
+
+        /* Intro Section */
+        .intro-section {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .intro-content {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .intro-content p {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 2rem;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .benefit-item {
+            text-align: center;
+            padding: 2rem;
+            background: #f8f9fa;
+            border-radius: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .benefit-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .benefit-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .benefit-item h3 {
+            color: #2c5aa0;
+            margin-bottom: 1rem;
+        }
+
+        /* Zones Section */
+        .zones-section {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+
+        .zones-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .zone-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .zone-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .zone-image {
+            height: 250px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .zone-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: #ff6b35;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        .zone-content {
+            padding: 2rem;
+        }
+
+        .zone-content h3 {
+            color: #2c5aa0;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .zone-content p {
+            color: #666;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .zone-features {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .zone-features li {
+            padding: 0.5rem 0;
+            color: #555;
+        }
+
+        .zone-features li:before {
+            content: "🚌 ";
+            margin-right: 0.5rem;
+        }
+
+        .zone-destinations {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 10px;
+            margin-bottom: 1.5rem;
+        }
+
+        .zone-destinations h4 {
+            color: #2c5aa0;
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+
+        .zone-destinations p {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 0;
+        }
+
+        .zone-btn {
+            background: #25D366;
+            color: white;
+            padding: 12px 20px;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            display: inline-block;
+            transition: all 0.3s ease;
+            width: 100%;
+            text-align: center;
+        }
+
+        .zone-btn:hover {
+            background: #1ea952;
+            transform: translateY(-2px);
+        }
+
+        /* Services Section */
+        .services-section {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-item {
+            text-align: center;
+            padding: 2rem;
+            background: linear-gradient(135deg, #2c5aa0, #ff6b35);
+            color: white;
+            border-radius: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .service-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-item h3 {
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .service-item p {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, #2c5aa0, #ff6b35);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        /* WhatsApp Float Button */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 30px;
+            right: 30px;
+            background: #25D366;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 2rem;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            z-index: 1000;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            background: #1ea952;
+        }
+
+        /* Footer */
+        .footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 3rem 0;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #ff6b35;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero-content p {
+                font-size: 1.1rem;
+            }
+
+            .nav-container {
+                padding: 0 1rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .logo {
+                font-size: 1.5rem;
+            }
+
+            .contact-btn {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .zones-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                bottom: 20px;
+                right: 20px;
+                font-size: 1.5rem;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="nav-container">
+            <a href="/index.html" class="logo">🌍 Aventurarte</a>
+            <div class="nav-links">
+                <a href="/index.html">Inicio</a>
+                <a href="/agencia-de-turismo.html">Turismo Nacional</a>
+                <a href="/agencia-de-turismo-en-autobus.html">Turismo en Autobús</a>
+                <a href="/agencia-de-cruceros.html">Cruceros</a>
+                <a href="https://wa.me/573126865031" class="contact-btn" target="_blank">
+                    📱 Contáctanos
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Agencia de Turismo en Autobús Cali - Viajes por Zonas</h1>
+            <p>Especialistas en turismo en autobús por todas las zonas de Cali. Viajes cómodos y seguros con salidas programadas desde Norte, Sur, Oeste y Centro de la ciudad.</p>
+            <a href="https://wa.me/573126865031?text=Hola, quiero información sobre viajes en autobús desde mi zona de Cali" class="cta-button" target="_blank">
+                Consultar Próximas Salidas
+            </a>
+        </div>
+    </section>
+
+    <!-- Intro Section -->
+    <section class="intro-section">
+        <div class="container">
+            <div class="intro-content">
+                <h2 class="section-title">Turismo en Autobús por Toda Cali</h2>
+                <p>Somos la única agencia especializada en turismo en autobús con cobertura completa en todas las zonas de Cali. Nuestros vehículos modernos y cómodos te llevan desde tu zona directamente a los mejores destinos turísticos.</p>
+                <p>Con más de 8 años conectando cada rincón de Cali con destinos increíbles, conocemos las mejores rutas y los puntos de encuentro más convenientes para cada zona de la ciudad.</p>
+            </div>
+
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <div class="benefit-icon">🚌</div>
+                    <h3>Autobuses Modernos</h3>
+                    <p>Flota nueva con aire acondicionado, asientos reclinables y wifi</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">🗺️</div>
+                    <h3>Cobertura Total</h3>
+                    <p>Salidas desde Norte, Sur, Oeste y Centro de Cali</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">👨‍✈️</div>
+                    <h3>Conductores Expertos</h3>
+                    <p>Personal capacitado con años de experiencia en turismo</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">⏰</div>
+                    <h3>Horarios Flexibles</h3>
+                    <p>Múltiples horarios de salida para tu comodidad</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Zones Section -->
+    <section class="zones-section">
+        <div class="container">
+            <h2 class="section-title">Zonas de Cali Disponibles</h2>
+            
+            <div class="zones-grid">
+                <!-- Norte Cali -->
+                <div class="zone-card" onclick="window.location.href='agencia-viajes-norte-cali.html'">
+                    <div class="zone-image" style="background-image: url('/4.jpg')">
+                        <div class="zone-badge">🔥 Zona Premium</div>
+                    </div>
+                    <div class="zone-content">
+                        <h3>Agencia de Viajes Norte Cali</h3>
+                        <p>Servicios especializados para la zona norte de Cali. Puntos de encuentro estratégicos en centros comerciales y avenidas principales de la zona más exclusiva de la ciudad.</p>
+                        
+                        <div class="zone-destinations">
+                            <h4>📍 Puntos de Encuentro:</h4>
+                            <p>Chipichape, Jardín Plaza, Ciudad Jardín, Valle del Lili, Unicentro</p>
+                        </div>
+
+                        <ul class="zone-features">
+                            <li>Recogida en hoteles zona norte</li>
+                            <li>Ruta directa sin escalas</li>
+                            <li>Servicio VIP disponible</li>
+                            <li>Grupos pequeños (máx. 25 personas)</li>
+                        </ul>
+                        
+                        <a href="https://wa.me/573126865031?text=Hola, quiero información sobre viajes desde Norte Cali" class="zone-btn" target="_blank">
+                            💬 Consultar Salidas Norte
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Sur Cali -->
+                <div class="zone-card" onclick="window.location.href='turismo-sur-cali.html'">
+                    <div class="zone-image" style="background-image: url('/5.jpg')">
+                        <div class="zone-badge">🌟 Popular</div>
+                    </div>
+                    <div class="zone-content">
+                        <h3>Turismo Sur Cali</h3>
+                        <p>Conectamos el sur de Cali con los mejores destinos turísticos. Puntos de encuentro cómodos y accesibles para toda la comunidad del sur de la ciudad.</p>
+                        
+                        <div class="zone-destinations">
+                            <h4>📍 Puntos de Encuentro:</h4>
+                            <p>Terminal Sur, La 14 de Calima, Palmetto, Cosmocentro</p>
+                        </div>
+
+                        <ul class="zone-features">
+                            <li>Recogida en barrios populares</li>
+                            <li>Precios especiales sur</li>
+                            <li>Descuentos familiares</li>
+                            <li>Facilidades de pago</li>
+                        </ul>
+                        
+                        <a href="https://wa.me/573126865031?text=Hola, quiero información sobre turismo desde Sur Cali" class="zone-btn" target="_blank">
+                            💬 Consultar Planes Sur
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Oeste Cali -->
+                <div class="zone-card" onclick="window.location.href='planes-turisticos-oeste-cali.html'">
+                    <div class="zone-image" style="background-image: url('/6.jpg')">
+                        <div class="zone-badge">🎯 Aventura</div>
+                    </div>
+                    <div class="zone-content">
+                        <h3>Planes Turísticos Oeste Cali</h3>
+                        <p>Desde el oeste de Cali hacia destinos de aventura y naturaleza. Ideales para familias que buscan experiencias al aire libre y ecoturismo.</p>
+                        
+                        <div class="zone-destinations">
+                            <h4>📍 Puntos de Encuentro:</h4>
+                            <p>Aventura Plaza, Zona Rosa, Menga, Terminal Oeste</p>
+                        </div>
+
+                        <ul class="zone-features">
+                            <li>Especialistas en ecoturismo</li>
+                            <li>Tours de aventura</li>
+                            <li>Grupos familiares</li>
+                            <li>Actividades deportivas</li>
+                        </ul>
+                        
+                        <a href="https://wa.me/573126865031?text=Hola, quiero información sobre planes turísticos desde Oeste Cali" class="zone-btn" target="_blank">
+                            💬 Consultar Planes Oeste
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Centro Cali -->
+                <div class="zone-card" onclick="window.location.href='agencia-viajes-centro-cali.html'">
+                    <div class="zone-image" style="background-image: url('/7.jpg')">
+                        <div class="zone-badge">🏛️ Histórico</div>
+                    </div>
+                    <div class="zone-content">
+                        <h3>Agencia de Viajes Centro Cali</h3>
+                        <p>Ubicados en el corazón histórico de Cali, ofrecemos fácil acceso desde el centro y conexión con todos los barrios tradicionales de la ciudad.</p>
+                        
+                        <div class="zone-destinations">
+                            <h4>📍 Puntos de Encuentro:</h4>
+                            <p>Plaza de Caicedo, Terminal, San Nicolás, La Merced</p>
+                        </div>
+
+                        <ul class="zone-features">
+                            <li>Ubicación central</li>
+                            <li>Fácil acceso transporte público</li>
+                            <li>Tours culturales</li>
+                            <li>Precios económicos</li>
+                        </ul>
+                        
+                        <a href="https://wa.me/573126865031?text=Hola, quiero información sobre viajes desde Centro Cali" class="zone-btn" target="_blank">
+                            💬 Consultar Viajes Centro
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services-section">
+        <div class="container">
+            <h2 class="section-title">Nuestros Servicios de Turismo en Autobús</h2>
+            
+            <div class="services-grid">
+                <div class="service-item">
+                    <h3>🌄 Tours de Un Día</h3>
+                    <p>Excursiones perfectas para disfrutar destinos cercanos sin pernoctar. Salidas temprano, regreso en la noche.</p>
+                </div>
+                <div class="service-item">
+                    <h3>🏨 Planes de Fin de Semana</h3>
+                    <p>Escapadas de 2-3 días con hospedaje incluido. Perfectos para descansar y conocer nuevos lugares.</p>
+                </div>
+                <div class="service-item">
+                    <h3>🎉 Viajes Grupales</h3>
+                    <p>Especializados en grupos de amigos, familias extensas y celebraciones especiales.</p>
+                </div>
+                <div class="service-item">
+                    <h3>🏢 Turismo Empresarial</h3>
+                    <p>Planes para empresas, team building y eventos corporativos con servicios personalizados.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>¿Listo para tu Próximo Viaje?</h2>
+            <p>Consulta con nuestros asesores especializados por zona y descubre las próximas salidas con descuentos especiales desde tu área de Cali</p>
+            <a href="https://wa.me/573126865031?text=Hola, quiero información sobre próximas salidas en autobús desde mi zona" class="cta-button" target="_blank">
+                Consultar Próximas Salidas
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="/">Inicio</a>
+                <a href="agencia-de-turismo.html">Turismo Nacional</a>
+                <a href="agencia-de-turismo-en-autobus.html">Turismo en Autobús</a>
+                <a href="agencia-de-cruceros.html">Cruceros</a>
+                <a href="centro-de-informacion-turistica.html">Información Turística</a>
+            </div>
+            <p>&copy; 2025 Aventurarte - Agencia de Turismo en Autobús Cali. Todos los derechos reservados.</p>
+            <p>📱 WhatsApp: +57 312 686 5031 | 📍 Cali, Valle del Cauca, Colombia</p>
+            <p>Especialistas en turismo en autobús por todas las zonas de Cali</p>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/573126865031?text=Hola, quiero información sobre destinos nacionales con descuento" class="whatsapp-float" target="_blank">
+        <img src="ic_whatsapp.png" alt="WhatsApp" style="width: 60%; height: 60%;">
+    </a>
+
+</body>
+</html>

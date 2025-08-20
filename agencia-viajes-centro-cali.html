@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agencia de Viajes Centro Cali - Turismo Cultural e Histórico | Aventurarte</title>
+    <meta name="description" content="Agencia de viajes en el centro histórico de Cali. Recogidas en Plaza de Caicedo, Terminal, San Nicolás. Tours culturales y precios económicos.">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
+
+        .header {
+            background: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        .nav { max-width: 1200px; margin: 0 auto; padding: 0 2rem; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 1.5rem; font-weight: bold; color: #2c5aa0; text-decoration: none; }
+        .contact-btn {
+            background: #25D366;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+        }
+
+        .hero {
+            height: 60vh;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                        url('/7.jpg') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            margin-top: 70px;
+        }
+        .hero h1 { font-size: 2.5rem; margin-bottom: 1rem; }
+        .hero p { font-size: 1.2rem; margin-bottom: 2rem; max-width: 600px; }
+
+        .container { max-width: 800px; margin: 0 auto; padding: 3rem 2rem; }
+        .section { margin-bottom: 3rem; }
+        .section h2 { color: #8B4513; margin-bottom: 1rem; font-size: 1.8rem; }
+
+        .historic-box {
+            background: linear-gradient(135deg, #8B4513, #CD853F);
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            margin: 2rem 0;
+        }
+        .historic-title { font-size: 2rem; font-weight: bold; margin-bottom: 1rem; }
+        .historic-detail { opacity: 0.9; margin-bottom: 2rem; }
+
+        .locations {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        .location {
+            background: #faf5f0;
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            border-left: 4px solid #8B4513;
+        }
+        .location h3 { color: #8B4513; margin-bottom: 0.5rem; }
+
+        .advantages {
+            background: #fff8f0;
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+        }
+
+        .cta-button {
+            background: #25D366;
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            display: inline-block;
+            text-align: center;
+            width: 100%;
+            margin: 1rem 0;
+        }
+
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 30px;
+            right: 30px;
+            background: #25D366;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 2rem;
+            z-index: 1000;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .hero p { font-size: 1rem; }
+            .nav { padding: 0 1rem; }
+            .locations { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="nav">
+            <a href="/index.html" class="logo">🌍 Aventurarte</a>
+            <a href="https://wa.me/573126865031" class="contact-btn">Contactar</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div>
+            <h1>Agencia de Viajes Centro Cali</h1>
+            <p>Ubicados en el corazón histórico de Cali. Tours culturales, precios económicos y fácil acceso desde toda la ciudad.</p>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="historic-box">
+            <div class="historic-title">Centro Histórico</div>
+            <div class="historic-detail">Tu agencia de confianza en el corazón de Cali</div>
+            <a href="https://wa.me/573126865031?text=Hola, estoy en el centro de Cali y busco planes turísticos económicos" class="cta-button">
+                Consultar Planes Económicos
+            </a>
+        </div>
+
+        <section class="section">
+            <h2>Puntos de Encuentro Centro Cali</h2>
+            <div class="locations">
+                <div class="location">
+                    <h3>Plaza de Caicedo</h3>
+                    <p>Plaza Principal - Catedral Metropolitana</p>
+                </div>
+                <div class="location">
+                    <h3>Terminal</h3>
+                    <p>Terminal de Transportes - Sala principal</p>
+                </div>
+                <div class="location">
+                    <h3>San Nicolás</h3>
+                    <p>Iglesia San Nicolás - Parque frontal</p>
+                </div>
+                <div class="location">
+                    <h3>La Merced</h3>
+                    <p>Iglesia La Merced - Zona histórica</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Ventajas del Centro</h2>
+            <div class="advantages">
+                <p><strong>Ubicación Central:</strong> Fácil acceso desde cualquier punto de Cali</p>
+                <p><strong>Transporte Público:</strong> Múltiples rutas de MIO y buses urbanos</p>
+                <p><strong>Precios Económicos:</strong> Las mejores tarifas de la ciudad</p>
+                <p><strong>Horarios Extendidos:</strong> Atención desde las 7:00 AM hasta 7:00 PM</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Tours Culturales</h2>
+            <p><strong>Cali Histórico:</strong> Recorrido por iglesias coloniales y museos</p>
+            <p><strong>Salsa y Cultura:</strong> Ruta por escuelas de baile y sitios emblemáticos</p>
+            <p><strong>Gastronomía Valluna:</strong> Tour gastronómico por el centro histórico</p>
+            <p><strong>Arte Urbano:</strong> Murales y expresiones artísticas de la ciudad</p>
+        </section>
+
+        <section class="section">
+            <h2>Facilidades Centro</h2>
+            <p><strong>Sin Cita Previa:</strong> Atención inmediata en nuestra oficina</p>
+            <p><strong>Pago en Efectivo:</strong> Aceptamos efectivo y transferencias</p>
+            <p><strong>Información Gratis:</strong> Asesoramiento sin compromiso</p>
+            <p><strong>Grupos Abiertos:</strong> Únete a grupos ya formados</p>
+        </section>
+
+        <div class="historic-box">
+            <h2>Desde el Corazón de Cali</h2>
+            <p>Visítanos en el centro o consúltanos por WhatsApp</p>
+            <a href="https://wa.me/573126865031?text=Hola, quiero información sobre planes turísticos desde el centro de Cali con precios económicos" class="cta-button">
+                Consultar Desde el Centro
+            </a>
+        </div>
+    </div>
+
+    <a href="https://wa.me/573126865031?text=Hola, quiero información sobre destinos nacionales con descuento" class="whatsapp-float" target="_blank">
+        <img src="ic_whatsapp.png" alt="WhatsApp" style="width: 60%; height: 60%;">
+    </a>
+</body>
+</html>

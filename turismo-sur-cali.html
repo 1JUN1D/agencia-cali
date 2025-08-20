@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turismo Sur Cali - Planes Familiares Zona Sur | Aventurarte</title>
+    <meta name="description" content="Turismo especializado en zona sur de Cali. Recogidas en Terminal Sur, La 14, Palmetto. Precios especiales y facilidades de pago para familias.">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
+
+        .header {
+            background: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        .nav { max-width: 1200px; margin: 0 auto; padding: 0 2rem; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 1.5rem; font-weight: bold; color: #2c5aa0; text-decoration: none; }
+        .contact-btn {
+            background: #25D366;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+        }
+
+        .hero {
+            height: 60vh;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+                        url('/5.jpg') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            margin-top: 70px;
+        }
+        .hero h1 { font-size: 2.5rem; margin-bottom: 1rem; }
+        .hero p { font-size: 1.2rem; margin-bottom: 2rem; max-width: 600px; }
+
+        .container { max-width: 800px; margin: 0 auto; padding: 3rem 2rem; }
+        .section { margin-bottom: 3rem; }
+        .section h2 { color: #DC143C; margin-bottom: 1rem; font-size: 1.8rem; }
+
+        .family-box {
+            background: linear-gradient(135deg, #DC143C, #FF6347);
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            margin: 2rem 0;
+        }
+        .family-title { font-size: 2rem; font-weight: bold; margin-bottom: 1rem; }
+        .family-detail { opacity: 0.9; margin-bottom: 2rem; }
+
+        .locations {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        .location {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            border-left: 4px solid #DC143C;
+        }
+        .location h3 { color: #DC143C; margin-bottom: 0.5rem; }
+
+        .benefits {
+            background: #fff5f5;
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+        }
+
+        .cta-button {
+            background: #25D366;
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            display: inline-block;
+            text-align: center;
+            width: 100%;
+            margin: 1rem 0;
+        }
+
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 30px;
+            right: 30px;
+            background: #25D366;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 2rem;
+            z-index: 1000;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .hero p { font-size: 1rem; }
+            .nav { padding: 0 1rem; }
+            .locations { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="nav">
+            <a href="/index.html" class="logo">🌍 Aventurarte</a>
+            <a href="https://wa.me/573126865031" class="contact-btn">Contactar</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div>
+            <h1>Turismo Sur Cali</h1>
+            <p>Planes familiares especiales para el sur de Cali. Precios accesibles, facilidades de pago y diversión para toda la familia.</p>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="family-box">
+            <div class="family-title">Planes Familiares Sur</div>
+            <div class="family-detail">Especialmente diseñados para familias del sur de Cali</div>
+            <a href="https://wa.me/573126865031?text=Hola, vivo en el sur de Cali y busco planes familiares con facilidades de pago" class="cta-button">
+                Consultar Planes Familiares
+            </a>
+        </div>
+
+        <section class="section">
+            <h2>Puntos de Encuentro Sur Cali</h2>
+            <div class="locations">
+                <div class="location">
+                    <h3>Terminal Sur</h3>
+                    <p>Terminal de Transportes - Zona de espera</p>
+                </div>
+                <div class="location">
+                    <h3>La 14 de Calima</h3>
+                    <p>Centro Comercial La 14 - Entrada principal</p>
+                </div>
+                <div class="location">
+                    <h3>Palmetto</h3>
+                    <p>Centro Comercial Palmetto - Plaza central</p>
+                </div>
+                <div class="location">
+                    <h3>Cosmocentro</h3>
+                    <p>Centro Comercial Cosmocentro - Piso 1</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Beneficios Zona Sur</h2>
+            <div class="benefits">
+                <p><strong>Precios Especiales:</strong> Descuentos exclusivos para residentes del sur</p>
+                <p><strong>Facilidades de Pago:</strong> Cuotas sin interés y planes de financiación</p>
+                <p><strong>Descuentos Familiares:</strong> Hasta 20% descuento para grupos familiares</p>
+                <p><strong>Niños Gratis:</strong> Menores de 5 años viajan sin costo</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Destinos Populares</h2>
+            <p><strong>Eje Cafetero Familiar:</strong> Plan especial para familias con niños</p>
+            <p><strong>Cartagena Económico:</strong> Paquete básico con todo lo esencial</p>
+            <p><strong>San Andrés Familiar:</strong> Todo incluido adaptado para familias</p>
+            <p><strong>Planes Nacionales:</strong> Destinos cercanos para fin de semana</p>
+        </section>
+
+        <section class="section">
+            <h2>Facilidades de Pago</h2>
+            <p>• Pago inicial desde $100.000 COP</p>
+            <p>• Hasta 6 cuotas sin interés</p>
+            <p>• Descuentos por pronto pago</p>
+            <p>• Planes familiares especiales</p>
+        </section>
+
+        <div class="family-box">
+            <h2>Viaja en Familia</h2>
+            <p>Consulta nuestros planes especiales con descuentos familiares</p>
+            <a href="https://wa.me/573126865031?text=Hola, somos una familia del sur de Cali y queremos conocer planes con descuentos familiares" class="cta-button">
+                Ver Ofertas Familiares
+            </a>
+        </div>
+    </div>
+
+    <a href="https://wa.me/573126865031?text=Hola, quiero información sobre destinos nacionales con descuento" class="whatsapp-float" target="_blank">
+        <img src="ic_whatsapp.png" alt="WhatsApp" style="width: 60%; height: 60%;">
+    </a>
+</body>
+</html>
